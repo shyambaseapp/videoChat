@@ -15,6 +15,10 @@ const io = require("socket.io")(server, {
 
 app.use(cors());
 
+app.get('/', (req, res) => {
+	res.send('Running');
+});
+
 const users = {};
 
 const socketToRoom = {};
