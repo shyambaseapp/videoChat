@@ -41,7 +41,7 @@ const Room = (props) => {
   const roomID = props.match.params.roomID;
 
   useEffect(() => {
-    socketRef.current = io.connect("https://videochatserver-evr8.onrender.com:8000");
+    socketRef.current = io.connect("https://videochatserver-evr8.onrender.com");
     console.log(socketRef.current);
     navigator.mediaDevices
       .getUserMedia({ video: videoConstraints, audio: true })
