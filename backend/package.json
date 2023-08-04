@@ -13,6 +13,6 @@
   "scripts": {
     "start": "PROD=true node server.js",
     "build": "npm install",
-    "dev": "nodemon index.js"
+    "dev": "nodemon server.js"
   }
 }
