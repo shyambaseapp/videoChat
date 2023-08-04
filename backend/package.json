@@ -10,6 +10,7 @@
     "socket.io": "^2.3.0"
   },
   "scripts": {
-    "start": "PROD=true node server.js"
+    "start": "PROD=true node server.js",
+    "build": "npm install"
   }
 }
