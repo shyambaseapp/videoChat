@@ -51,7 +51,7 @@ io.on("connection", (socket) => {
       signal: payload.signal,
       id: socket.id,
     });
-    console/log("Returning Signal", payload);
+    console.log("Returning Signal", payload);
   });
 
   socket.on("disconnect", () => {
