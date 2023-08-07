@@ -34,7 +34,7 @@ const videoConstraints = {
 };
 
 const socket = io.connect(
-  "https://videochatserver-evr8.onrender.com:10000"
+  "https://videochatserver-evr8.onrender.com"
 );
 console.log(socket);
 
@@ -44,7 +44,7 @@ const Room = (props) => {
   const userVideo = useRef();
   const peersRef = useRef([]);
   const roomID = props.match.params.roomID;
-  console.log(roomID);
+  console.log(props);
   useEffect(() => {
     navigator.mediaDevices
       .getUserMedia({ video: videoConstraints, audio: true })
@@ -122,7 +122,7 @@ const Room = (props) => {
         if (peer._remoteStreams != null) {
           return <Video key={index} peer={peer} />;
         }
-        return 0;
+        return null;
       })}
     </Container>
   );

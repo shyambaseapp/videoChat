@@ -5,7 +5,7 @@ const cors = require("cors");
 app.use(cors());
 const io = require("socket.io")(server, {
   cors: {
-    origin: "*",
+    origin: "https://videochatclient.onrender.com/",
     methods: ["GET", "POST"],
   },
 });
