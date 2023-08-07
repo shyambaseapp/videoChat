@@ -23,7 +23,7 @@ const Video = (props) => {
     props.peer.on("stream", (stream) => {
       ref.current.srcObject = stream;
     });
-  }, []);
+  }, [props.peer]);
 
   return <StyledVideo playsInline autoPlay ref={ref} />;
 };
@@ -39,8 +39,10 @@ const Room = (props) => {
   const userVideo = useRef();
   const peersRef = useRef([]);
   const roomID = props.match.params.roomID;
-  socketRef.current = io.connect("https://videochatserver-evr8.onrender.com/");
+
   useEffect(() => {
+    socketRef.current = io.connect("https://videochatserver-evr8.onrender.com/");
+    console.log(socketRef.current);
     navigator.mediaDevices
       .getUserMedia({ video: videoConstraints, audio: true })
       .then((stream) => {
@@ -74,7 +76,7 @@ const Room = (props) => {
           item.peer.signal(payload.signal);
         });
       });
-  }, []);
+  }, [roomID]);
 
   function createPeer(userToSignal, callerID, stream) {
     const peer = new Peer({
@@ -117,6 +119,7 @@ const Room = (props) => {
         if (peer._remoteStreams != null) {
           return <Video key={index} peer={peer} />;
         }
+        return 0;
       })}
     </Container>
   );
