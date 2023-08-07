@@ -34,7 +34,7 @@ const videoConstraints = {
 };
 
 const socket = io.connect(
-  "https://videochatserver-evr8.onrender.com/"
+  "https://videochatserver-evr8.onrender.com:10000"
 );
 console.log(socket);
 
