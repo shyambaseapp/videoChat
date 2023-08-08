@@ -4,7 +4,7 @@ import { v1 as uuid } from "uuid";
 const CreateRoom = (props) => {
   function create() {
     const id = uuid();
-    window.location.href = `/room/${id}`;
+    props.history.push(`/room/${id}`);
   }
 
   return (
