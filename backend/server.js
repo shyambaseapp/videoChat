@@ -5,7 +5,7 @@ const cors = require("cors");
 app.use(cors());
 const io = require("socket.io")(server, {
   cors: {
-    origin: "https://videochatclient.onrender.com/",
+    origin: "https://telewave.netlify.app/",
     methods: ["GET", "POST"],
   },
 });
